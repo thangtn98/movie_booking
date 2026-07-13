@@ -2,19 +2,28 @@ package org.ood.moviebooking.domain.entity;
 
 import lombok.Getter;
 
+import java.util.ArrayList;
 import java.util.List;
 
-@Getter
 public class Cinema {
+    @Getter
     private final String cinemaId;
     private final String name;
+    @Getter
     private final String city;
-    private final List<CinemaHall> halls;
+    private final List<CinemaHall> halls = new ArrayList<>();
 
-    public Cinema(String cinemaId, String name, String city, List<CinemaHall> halls) {
+    public Cinema(String cinemaId, String name, String city) {
         this.cinemaId = cinemaId;
         this.name = name;
         this.city = city;
-        this.halls = halls;
+    }
+
+    public void addHall(CinemaHall hall) {
+        halls.add(hall);
+    }
+
+    public List<CinemaHall> getHalls() {
+        return List.copyOf(halls);
     }
 }
