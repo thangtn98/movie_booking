@@ -7,5 +7,5 @@ import java.util.Optional;
 public interface BookingRepository {
     Booking save(Booking booking);
 
-    Optional<Booking> findById(String BookingId);
+    Optional<Booking> findById(String bookingId);
 }
